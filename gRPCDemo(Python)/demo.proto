@@ -1,0 +1,21 @@
+syntax = "proto3";
+package demo_server;
+
+
+option java_multiple_files = true;
+option java_package = "demo_server";
+option java_outer_classname = "DemoServiceProto";
+option objc_class_prefix = "HLW";
+
+service FormatData {   //定义服务,用在rpc传输中
+  rpc DoFormat(actionrequest) returns (actionresponse){}
+}
+
+message actionrequest {
+  string input1 = 1;
+  string input2 =2;
+}
+
+message actionresponse{
+  string res=1;
+}
